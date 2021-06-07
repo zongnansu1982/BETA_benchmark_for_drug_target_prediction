@@ -3,7 +3,7 @@
 <table border='1' align="center">
 <tr>Figure 1. Organization of the proposed benchmark</tr>
 <tr>
-<img src="img/big_pic.png" height="400" width="400" >
+<img src="img/big_pic.png" height="600" width="1200" >
 </tr>
 </tabe>
 
