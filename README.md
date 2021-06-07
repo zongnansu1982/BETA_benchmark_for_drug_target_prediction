@@ -15,10 +15,7 @@ We provide a large-scale benchmark that enables a comprehensive evaluation of th
 <table border='1' align="center">
 <tr>
 We constructed a multiple-partite network based on an integration of the existing 9 biomedical repositories (Diseasome, Drugbank, Gene Ontology Annotation (GOA), Interaction Reference Index (iRefindex), Kyoto Encyclopedia of Genes and Genomes (KEGG), Linked Structured Product Label (Linkedspl), Online Mendelian Inheritance in Man (OMIM), Pharmacogenomics Knowledge Base (Pharmgkb), and SIDER) incorporating 952,489 entities and 2,560,787 associations in total (see Table 1) 
-</tr>
-<tr>
-	       
-</tr>
+</tr><br/><br/>
 <tr>
 <img src="img/data.png" height="500" width="2500" >
 </tr>
