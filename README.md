@@ -6,7 +6,10 @@
 
 
 # Objective:   
-We propose a similarity-based drug-target prediction method that enhances existing association discovery methods by using a topology-based similarity measure. 
+We provide a large-scale benchmark that enables a comprehensive evaluation of the drug-target predictive models to facilitate a better selection of computational strategies for pre-screening. This benchmark functions are: 
+
+1) an extensive multiple-partite network (e.g., 0.95 million biomedical concepts including 59 thousand drugs and 75 thousand targets, and 2.5 million associations including 817 thousand drug-target associations) as well as drug-drug and protein-protein similarities based on drug chemical structures and gene sequences
+2) a way of comprehensively evaluating strategies that reflect diverse scenarios (a total 1300 tasks across two types of training/testing sampling strategies based on drug-target space as well as five types of validation strategies).  
 
 # Methods:
 * 1. NetWork: MultiPartite Network
