@@ -1,8 +1,6 @@
-# BETA: a comprehensive BEnchmark for computational drug TArget prediction
-
 <table border='1' align="center">
 <tr>
-<img src="img/log_1.png" height="500" width="1800" >
+<img src="img/log_1.png" height="500" width="2000" >
 </tr>
 </tabe>
 
