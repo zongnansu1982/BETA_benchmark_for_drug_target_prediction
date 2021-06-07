@@ -17,7 +17,7 @@ We provide a large-scale benchmark that enables a comprehensive evaluation of th
 <img src="img/data.png" height="500" width="2500" >
 </tr>
 <tr>
-<img src="img/table_1.png" height="500" width="2500" >
+<img src="img/table_1.png" height="500" width="1500" >
 </tr>
 </tabe>
 
