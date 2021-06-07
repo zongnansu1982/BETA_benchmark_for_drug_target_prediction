@@ -1,6 +1,6 @@
 <table border='1' align="center">
 <tr>
-<img src="img/log_1.png" height="500" width="2000" >
+<img src="img/log_1.png" height="600" width="2500" >
 </tr>
 </tabe>
 
