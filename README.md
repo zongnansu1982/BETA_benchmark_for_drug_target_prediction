@@ -15,7 +15,7 @@ We provide a large-scale benchmark that enables a comprehensive evaluation of th
 <table border='1' align="center">
 <tr>
 We constructed a multiple-partite network based on an integration of the existing 9 biomedical repositories (Diseasome, Drugbank, Gene Ontology Annotation (GOA), Interaction Reference Index (iRefindex), Kyoto Encyclopedia of Genes and Genomes (KEGG), Linked Structured Product Label (Linkedspl), Online Mendelian Inheritance in Man (OMIM), Pharmacogenomics Knowledge Base (Pharmgkb), and SIDER) incorporating 952,489 entities and 2,560,787 associations in total (see Table 1) 
-</tr><br/><br/>
+</tr>
 <tr>
 <img src="img/data.png" height="500" width="2500" >
 </tr>
@@ -24,16 +24,15 @@ We constructed a multiple-partite network based on an integration of the existin
 </tr>
 </tabe>
 
-# Usage   
-* Embedding
-	* (a) node2vec
-		* 1. covert input data to node2vec format data: PythonDataPreparement.java
-		* 2. generate Python script for node2vec embedding: PythonScripter.java
-		* 3. node2vec embedding: https://github.com/aditya-grover/node2vec
-		* 4. post-process for the embedding model: EmbeddingPostProcessing.java
-	* (b) deepwalk
-		* 1.deepwalk-based embedding: DeepWalkMethod().training(parameters)
-* Prediction   
+# Benchmark    
+<table border='1' align="center">
+<tr>
+There were five types of evaluation tasks designed based on the different combinations of validation and drug-target space for training and testing (see Table 2).
+</tr>
+<tr>
+<img src="img/table_2.png" height="500" width="2500" >
+</tr>
+</tabe>
   
 
 
