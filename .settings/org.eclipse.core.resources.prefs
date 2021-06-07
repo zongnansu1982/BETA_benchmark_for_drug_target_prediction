@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/benchmark/render/external/External_Testgenerator.java=UTF-8
+encoding//src/benchmark/render/external/Generate_Annotation_Cancer.java=UTF-8
+encoding//src/benchmark/render/external/Generate_Annotation_Disease.java=UTF-8
+encoding//src/benchmark/render/external/Show_Annotation_Cancer.java=UTF-8
+encoding//src/benchmark/render/external/Test_clinicCT.java=UTF-8
+encoding//src/benchmark/render/internal/Internal_Testgenerator.java=UTF-8
+encoding//src/benchmark/render/internal/Test_drugClass.java=UTF-8
+encoding//src/benchmark/render/internal/Test_proteinClass.java=UTF-8
+encoding//src/data/analysis/repository/Parser_drugbank.java=UTF-8
+encoding//src/data/analysis/repository/Parser_linkspl.java=UTF-8
+encoding//src/data/render/repository/PharmGKB.java=UTF-8
+encoding//src/main/Render_main.java=UTF-8
+encoding//src/useful_association.txt=UTF-8
