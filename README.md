@@ -34,7 +34,9 @@ There were five types of evaluation tasks designed based on the different combin
 </tr>
 </tabe>
   
-# How to use 
+# How to use
+we follow the copy-right policy regulated by the license in each database. Please refer to the license for the data download.  
+
 - Data: 
    - [DrugBank](https://go.drugbank.com/)
    - [bio2rdf](https://bio2rdf.org/)
