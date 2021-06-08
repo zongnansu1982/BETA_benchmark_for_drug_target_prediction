@@ -37,9 +37,15 @@ There were five types of evaluation tasks designed based on the different combin
 # How to use
 we follow the copy-right policy regulated by the license in each database. Please refer to the license for the data download.  
 
-- Data: 
+- Data sources: 
    - [DrugBank](https://go.drugbank.com/)
    - [bio2rdf](https://bio2rdf.org/)
-   - [DiseaseNetwork](http://networkrepository.com/bio-diseasome.php):
+   - [DiseaseNetwork](http://networkrepository.com/bio-diseasome.php)
+- Maven install:
+  - [Maven in eclipse](https://www.vogella.com/tutorials/EclipseMaven/article.html)
+- Network generation:
+  - Java src/main/Render_main.java
+- Benchmark generation:
+  - src/main/Benchmark_main.java
 # Contact
 For help or questions of using the application, please contact zongnansu1982@gmail.com
