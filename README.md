@@ -37,7 +37,7 @@ There were five types of evaluation tasks designed based on the different combin
 # How to use 
 - Data: 
    - [DrugBank](https://go.drugbank.com/)
-   - [bio2rdf] (https://bio2rdf.org/)
-   - [DiseaseNetwork] (http://networkrepository.com/bio-diseasome.php):
+   - [bio2rdf](https://bio2rdf.org/)
+   - [DiseaseNetwork](http://networkrepository.com/bio-diseasome.php):
 # Contact
 For help or questions of using the application, please contact zongnansu1982@gmail.com
