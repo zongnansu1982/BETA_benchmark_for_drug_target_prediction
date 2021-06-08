@@ -35,7 +35,7 @@ There were five types of evaluation tasks designed based on the different combin
 </tabe>
   
 # How to use 
-* Data: 
+- Data: 
  - [DrugBank](https://go.drugbank.com/)
  - [bio2rdf] (https://bio2rdf.org/)
  - DiseaseNetwork (http://networkrepository.com/bio-diseasome.php):
