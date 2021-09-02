@@ -52,4 +52,4 @@ We follow the copy-right policy regulated by the license in each database. Pleas
 - Benchmark generation:
   - Java src/main/Benchmark_main.java
 # Contact
-For help or questions of using the application, please contact zongnansu1982@gmail.com
+For help or questions of using the application, please contact Zong.nansu@mayo.edu
