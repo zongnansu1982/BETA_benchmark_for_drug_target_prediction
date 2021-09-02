@@ -41,6 +41,10 @@ We follow the copy-right policy regulated by the license in each database. Pleas
    - [DrugBank](https://go.drugbank.com/)
    - [bio2rdf](https://bio2rdf.org/)
    - [DiseaseNetwork](http://networkrepository.com/bio-diseasome.php)
+- Environment:
+  - Java 1.8
+  - Weka 3.8
+  - nxparser 2.2
 - Maven install:
   - [Maven in eclipse](https://www.vogella.com/tutorials/EclipseMaven/article.html)
 - Network generation:
