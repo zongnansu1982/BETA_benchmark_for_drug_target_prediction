@@ -55,8 +55,8 @@ We follow the copy-right policy regulated by the license in each database, and w
 - Maven install:
   - [Maven in eclipse](https://www.vogella.com/tutorials/EclipseMaven/article.html)
 - Network generation:
-  - Java src/main/Render_main.java ## **running all the data need approximately 1 hour**
+  - Java src/main/Render_main.java ## **running all the data needs approximately 1 hour**
 - Benchmark generation:
-  - Java src/main/Benchmark_main.java **running all the data need approximately 3 hours**
+  - Java src/main/Benchmark_main.java **running all the data needs approximately 3 hours**
 # Contact
 For help or questions of using the application, please contact Zong.nansu@mayo.edu

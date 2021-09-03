@@ -49,12 +49,12 @@ public class Benchmark_main {
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
 		// TODO Auto-generated method stub
 		
-//		task_0();
-//		task_1();
-//		task_2();
-		task_3();//问题
-//		task_4();
-//		task_5();
+		task_0();
+		task_1();
+		task_2();
+		task_3();
+		task_4();
+		task_5();
 	}
 	
 	
