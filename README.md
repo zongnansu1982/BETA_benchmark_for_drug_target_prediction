@@ -42,11 +42,11 @@ We follow the copy-right policy regulated by the license in each database, and w
    - [bio2rdf](https://bio2rdf.org/)
    - [DiseaseNetwork](http://networkrepository.com/bio-diseasome.php)
    
-- Sample data: **The sample datasets are used for demonstration of the data format, you need downloading full datasets to run. Running sample dataset will result in failure of the program**
+- Sample data: ** @ Warning: The sample datasets are used for demonstration of the data format, you need downloading full datasets to run. Running sample dataset will result in failure of the program**
    - data_sample/input/done ## **Those are the datasets with a reduced size, please go the data sources to download the file with the corresponding names**
    - data_sample/output/\*.nq ## ** Those are the example networks used in the benchmark, including associations and mappings **
    - data_sample/output/datasets/experiment ## **Those are the example evaluation tasks for the benchmark, to generate the tasks needed a generation of the network first**
-   - data_sample/output/datasets/orinigal ## **Those are the files needed to generate the network and evaluation tasks. warning: modification could result failure of the program**
+   - data_sample/output/datasets/orinigal ## **Those are the files needed to generate the network and evaluation tasks. @ Warning: modification could result failure of the program**
    
 - Environment:
   - Java 1.8
