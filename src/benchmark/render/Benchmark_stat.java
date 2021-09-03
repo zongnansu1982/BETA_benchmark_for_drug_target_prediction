@@ -17,11 +17,11 @@ import java_cup.internal_error;
 import java_cup.parse_action;
 
 public class Benchmark_stat {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		BufferedWriter bw=new BufferedWriter(new FileWriter("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/benchmar.stat")); 
+		BufferedWriter bw=new BufferedWriter(new FileWriter(dataDir+"/output/datasets/experiment/benchmar.stat")); 
 		
 		bw.write("dir"+"\t"+"# tasks"+"\t"+"train_number"+"\t"
 				+"train_true"+"\t"
@@ -36,19 +36,19 @@ public class Benchmark_stat {
 				+"overlap_drug"+"\t"
 				+"overlap_target"+"\n");
 		
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/internal", 10, bw);
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/internal_general", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/internal", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/internal_general", 10, bw);
 		
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/drugClass/drugbankCategory", 10, bw);
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/drugClass/linkplClass", 10, bw);
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/drugClass/linkplType", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/drugClass/drugbankCategory", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/drugClass/linkplClass", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/drugClass/linkplType", 10, bw);
 		
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/targetClass/family", 10, bw);
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/targetClass/subFamily", 10, bw);
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/targetClass/proteinClass", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/targetClass/family", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/targetClass/subFamily", 10, bw);
+		getStat(dataDir+"/output/datasets/experiment/targetClass/proteinClass", 10, bw);
 		
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/disease", 0, bw);
-		getStat("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/clinicalCT", 0, bw);
+		getStat(dataDir+"/output/datasets/experiment/disease", 0, bw);
+		getStat(dataDir+"/output/datasets/experiment/clinicalCT", 0, bw);
 		bw.flush();
 		bw.close();
 	}

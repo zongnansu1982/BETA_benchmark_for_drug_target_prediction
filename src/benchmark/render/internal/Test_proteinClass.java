@@ -20,7 +20,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Test_proteinClass {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		pantherTodrugbank() ;
@@ -66,7 +66,7 @@ public class Test_proteinClass {
 		HashMap<String, HashSet<String>> uniprotToDrugbankHashMap=getUniprotToDrugbank();
 		HashMap<String, HashSet<String>> objectToTripleHashMap=getTripleFromObject();
 		
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/PTHR15.0_human")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/input/PTHR15.0_human")));
 		String lineString=null;
 		
 		HashMap<String, HashSet<String>> pantherMolecular_uniprot=new HashMap<>();
@@ -267,7 +267,7 @@ public class Test_proteinClass {
 	}
 	
 	public static HashMap<String, HashSet<String>> getUniprotToDrugbank() throws IOException{
-		BufferedReader br = new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+		BufferedReader br = new BufferedReader(new FileReader(new File(dataDir+"/input/done/drugbank.nq")));
 		String line=null;
 		HashMap<String,HashSet<String>> valueHashMap=new HashMap<>();
 		while((line=br.readLine())!=null){
@@ -302,7 +302,7 @@ public class Test_proteinClass {
 	
 	
 	public static HashMap<String, HashSet<String>> getTripleFromObject() throws IOException{
-		BufferedReader br = new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/association_drugbank.nq")));
+		BufferedReader br = new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/association_drugbank.nq")));
 		String line=null;
 		HashMap<String,HashSet<String>> valueHashMap=new HashMap<>();
 		while((line=br.readLine())!=null){

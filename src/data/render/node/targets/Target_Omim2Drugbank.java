@@ -19,7 +19,7 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import jsat.linear.distancemetrics.PearsonDistance;
 
 public class Target_Omim2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -27,11 +27,11 @@ public class Target_Omim2Drugbank {
 	
 	public static void writeMapping(String output) throws IOException {
 		HashMap<String, HashSet<String>> toOmim=getfromhgnc
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/hgnc_complete_set.nq") ; //uniprot&hgnc, hgnc_symbol
+				(dataDir+"/input/done/hgnc_complete_set.nq") ; //uniprot&hgnc, hgnc_symbol
 		
 		HashMap<String, HashSet<String>> toDrugbankHashMap=getfromDrugbank(
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq"); //uniprot&hgnc, drugbank
-		HashSet<String> symbolSet=getSymbolfromOmim("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq");
+				dataDir+"/input/done/drugbank.nq"); //uniprot&hgnc, drugbank
+		HashSet<String> symbolSet=getSymbolfromOmim(dataDir+"/input/done/omim.nq");
 		writeMapping(symbolSet,toOmim,toDrugbankHashMap,output) ;
 	}
 	

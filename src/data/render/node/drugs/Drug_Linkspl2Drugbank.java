@@ -18,7 +18,7 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import javassist.expr.NewArray;
 
 public class Drug_Linkspl2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -26,7 +26,7 @@ public class Drug_Linkspl2Drugbank {
 	
 	
 	public static void writeMapping(String outfile ) throws IOException {
-		HashMap<String,HashSet<String>> todrugbank=getDrugbank("D:/data/drug-taget-network/Databases/data/release_4/input/done/linkspl.nt");
+		HashMap<String,HashSet<String>> todrugbank=getDrugbank(dataDir+"/input/done/linkspl.nt");
 		
 		BufferedWriter bw =new BufferedWriter(new FileWriter(new File(outfile)));
 		

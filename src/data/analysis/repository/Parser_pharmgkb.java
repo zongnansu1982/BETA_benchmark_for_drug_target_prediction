@@ -14,18 +14,18 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_pharmgkb {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/pharmgkb_drugs.nq") ;
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/pharmgkb_diseases.nq") ;
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/pharmgkb_genes.nq") ;
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/pharmgkb_twosides.nq") ;
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/pharmgkb_rsid.nq") ;
+//		getproterty(dataDir+"/input/pharmgkb_drugs.nq") ;
+//		getproterty(dataDir+"/input/pharmgkb_diseases.nq") ;
+//		getproterty(dataDir+"/input/pharmgkb_genes.nq") ;
+//		getproterty(dataDir+"/input/pharmgkb_twosides.nq") ;
+//		getproterty(dataDir+"/input/pharmgkb_rsid.nq") ;
 		
-		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/done/pharmgkb_relationships.nq") ;
+		getproterty(dataDir+"/input/done/pharmgkb_relationships.nq") ;
 		
-		checkProperty("D:/data/drug-taget-network/Databases/data/release_4/input/done/pharmgkb_relationships.nq") ;
+		checkProperty(dataDir+"/input/done/pharmgkb_relationships.nq") ;
 	}
 	
 	public static void checkProperty(String input) throws IOException {

@@ -20,7 +20,7 @@ import data.process.map.Hgnc;
 import data.process.map.Omim;
 
 public class Target_Diseasome2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
@@ -28,9 +28,9 @@ public class Target_Diseasome2Drugbank {
 	
 	public static void writeMapping(String output) throws IOException {
 		HashMap<String, HashSet<String>> diseasome = Target_Diseasome2Drugbank
-				.getDisease("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt"); // Hgnc & bio2rdfSymbol, diseasome
+				.getDisease(dataDir+"/input/done/diseasome_dump.nt"); // Hgnc & bio2rdfSymbol, diseasome
 		HashMap<String, HashSet<String>> drugbank = Target_Diseasome2Drugbank
-				.getDrugBank("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq"); // uniprot& hngc& genatlas, drugbank
+				.getDrugBank(dataDir+"/input/done/drugbank.nq"); // uniprot& hngc& genatlas, drugbank
 		Target_Diseasome2Drugbank.writeMapping(diseasome, drugbank,
 				output);
 	}
@@ -104,7 +104,7 @@ public class Target_Diseasome2Drugbank {
 		BufferedReader br = new BufferedReader(new FileReader(new File(input)));
 		String line=null;
 		Omim omim= new Omim();
-		HashMap<String,HashSet<String>> uniprotOmim=omim.getUniprotOmim("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq");
+		HashMap<String,HashSet<String>> uniprotOmim=omim.getUniprotOmim(dataDir+"/input/done/omim.nq");
 		
 		HashMap<String,HashSet<String>> mappings=new HashMap<>();
 		HashSet<String> targets=new HashSet<>();

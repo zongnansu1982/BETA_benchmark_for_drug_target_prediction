@@ -16,7 +16,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Drug_Sider2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
@@ -25,9 +25,9 @@ public class Drug_Sider2Drugbank {
 	
 	public static void writeMapping(String output) throws IOException {
 		HashMap<String,HashSet<String>> mapping_1=Drug_Sider2Drugbank.getSider
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/sider_dump.nt"); //drugbank & dbpedia , sider
+				(dataDir+"/input/done/sider_dump.nt"); //drugbank & dbpedia , sider
 		HashMap<String,HashSet<String>> mapping_2=Drug_Sider2Drugbank.getDrugBank
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
+				(dataDir+"/input/done/drugbank.nq");
 		writeMapping(mapping_1,mapping_2,output);
 	}
 	

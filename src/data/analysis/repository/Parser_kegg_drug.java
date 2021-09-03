@@ -12,17 +12,17 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_kegg_drug {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/kegg-drug.nq") ;
-		checkSameValue("D:/data/drug-taget-network/Databases/data/release_4/input/kegg-drug.nq");
+//		getproterty(dataDir+"/input/kegg-drug.nq") ;
+		checkSameValue(dataDir+"/input/kegg-drug.nq");
 		
-//		getinstance("D:/data/drug-taget-network/Databases/data/release_4/input/goa_human.nq") ;
-//		getObjects("D:/data/drug-taget-network/Databases/data/release_4/input/goa_human.nq",
+//		getinstance(dataDir+"/input/goa_human.nq") ;
+//		getObjects(dataDir+"/input/goa_human.nq",
 //				"<http://bio2rdf.org/go:0044822>") ;
 		
-//		exploreAllObjects("D:/data/drug-taget-network/Databases/data/release_4/input/goa_human.nq");
+//		exploreAllObjects(dataDir+"/input/goa_human.nq");
 	}
 	
 	

@@ -18,7 +18,7 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import java_cup.internal_error;
 
 public class Drug_similarity {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		HashSet<String> set_exisiting=pull_chemical_from_SimilarityFile() ;
@@ -40,7 +40,7 @@ public class Drug_similarity {
 
 	public static HashSet<String> pull_chemical_from_SimilarityFile() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/drug_similarity.tsv")));
+				dataDir+"/output/datasets/orignial/drug_similarity.tsv")));
 		String line=null;
 		HashSet<String> drugSet=new HashSet<>();
 		int i=0;
@@ -58,7 +58,7 @@ public class Drug_similarity {
 	
 	public static HashSet<String> pull_chemical_from_Drugbank() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+				dataDir+"/input/done/drugbank.nq")));
 		String line=null;
 		HashSet<String> drugSet=new HashSet<>();
 		

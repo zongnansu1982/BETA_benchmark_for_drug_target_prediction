@@ -17,16 +17,16 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_irefindex_all {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-//		getproterty_advance("D:/data/drug-taget-network/Databases/data/release_4/input/irefindex-all.nq") ;
-//		getType("D:/data/drug-taget-network/Databases/data/release_4/input/done/irefindex-all.nq") ;
-		getsubject_advance("D:/data/drug-taget-network/Databases/data/release_4/input/done/irefindex-all.nq", 
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/tmp_irefindex.nq") ;
-//		getinstance("D:/data/drug-taget-network/Databases/data/release_4/input/linkspl.nt",
+//		getproterty_advance(dataDir+"/input/irefindex-all.nq") ;
+//		getType(dataDir+"/input/done/irefindex-all.nq") ;
+		getsubject_advance(dataDir+"/input/done/irefindex-all.nq", 
+				dataDir+"/input/done/tmp_irefindex.nq") ;
+//		getinstance(dataDir+"/input/linkspl.nt",
 //				"<http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/resource/FDAPharmgxTable/1>");
-//		getinstance("D:/data/drug-taget-network/Databases/data/release_4/input/linkspl.nt",
+//		getinstance(dataDir+"/input/linkspl.nt",
 //				"<http://dbmi-icode-01.dbmi.pitt.edu/linkedSPLs/resource/structuredProductLabelMetadata/bb81de7b-c542-495b-9278-bb8bbd6ff199>");
 		
 	}

@@ -44,22 +44,24 @@ import java_cup.internal_error;
 
 public class Benchmark_main {
 
+	public static String dataDir="data_sample";
+	
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
 		// TODO Auto-generated method stub
 		
-		task_0();
-		task_1();
-		task_2();
-		task_3();
-		task_4();
-		task_5();
+//		task_0();
+//		task_1();
+//		task_2();
+		task_3();//问题
+//		task_4();
+//		task_5();
 	}
 	
 	
 	public static void task_0() throws IOException {
 		generate_genral();
 		for (int i = 0; i < 10; i++) {
-		String path="D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/internal";
+		String path=dataDir+"/output/datasets/experiment/internal_general";
 		String train=path+"/train_"+i+"_general.nt";
 		String test=path+"/test_"+i+"_general.nt";
 		String test_isolateFree=path+"/test_"+i+"_general_isolateFree.nt";
@@ -84,7 +86,7 @@ public class Benchmark_main {
 	}
 	
 	public static void task_5() throws IOException, ParserConfigurationException, SAXException {
-		String annotation_file="D:/data/drug-taget-network/Databases/data/release_4/input/disease_annotation/annotation_disease_results.csv";
+		String annotation_file=dataDir+"/output/datasets/orignial/annotation_disease_results.csv";
 		
 //		generate_clinicalCT_genral(annotation_file);
 //		generate_internal_clinicalCT(annotation_file);
@@ -92,7 +94,7 @@ public class Benchmark_main {
 	}
 	
 	public static HashSet<String> getDrugTarget() throws IOException {
-		String drugbank_file="D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq";
+		String drugbank_file=dataDir+"/output/association_drugbank.nq";
 		
 		String line=null;
 		HashSet<String> targets=getTargets() ;
@@ -140,7 +142,7 @@ public class Benchmark_main {
 	        HashSet<String> targets=getTargets();
 	        
 		HashMap<String,HashSet<String>> disease_allTargets=new HashMap<>();
-		for(File file:new File("D:/data/drug-taget-network/Databases/data/release_4/input/disease_annotation/diseases").listFiles()){
+		for(File file:new File(dataDir+"/input/disease_annotation/diseases").listFiles()){
 			updateDisease_target(file.getAbsolutePath(),  targets,  disease_allTargets);
 		}
 		System.out.println(disease_allTargets);
@@ -212,7 +214,7 @@ public class Benchmark_main {
 	
 	public static void changeNames() {
 		HashSet<String> set=new HashSet<>();
-		for(File dir:new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/targetClass").listFiles()) {
+		for(File dir:new File(dataDir+"/output/datasets/experiment/targetClass").listFiles()) {
 			if(dir.getName().equals("family")||dir.getName().equals("proteinClass")) {
 				for(File file:dir.listFiles()) {
 					if(file.getName().contains("_trt.nt")) {
@@ -229,8 +231,8 @@ public class Benchmark_main {
 	
 	public static void generate_diseaseClass(HashSet<String> diseases) throws IOException, ParserConfigurationException, SAXException {
 		
-		String drugbank_file="D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq";
-		String drugbank_newfile="D:/data/drug-taget-network/Databases/data/release_4/input/full database_202011.xml";
+		String drugbank_file=dataDir+"/output/datasets/orignial/network/association_drugbank.nq";
+		String drugbank_newfile=dataDir+"/input/full database_202011.xml";
 		
 		String line=null;
 		HashSet<String> targets=getTargets() ;
@@ -350,9 +352,9 @@ public class Benchmark_main {
 		
 		HashMap<String, HashSet<String>> diseaseToDrugBankTriple_filgered=filter(diseaseToDrugBankTriple,
 				diseases);
-		new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/disease").mkdirs();
+		new File(dataDir+"/output/datasets/experiment/disease").mkdirs();
 		External_Testgenerator.writeDataToFolders_disease(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/disease",
+				dataDir+"/output/datasets/experiment/disease",
 				tripleSet,  
 				diseaseToDrugBankTriple_filgered, 
 				labels, 
@@ -364,8 +366,8 @@ public class Benchmark_main {
 	
 public static void generate_diseaseClass() throws IOException, ParserConfigurationException, SAXException {
 		
-		String drugbank_file="D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq";
-		String drugbank_newfile="D:/data/drug-taget-network/Databases/data/release_4/input/full database_202011.xml";
+		String drugbank_file=dataDir+"/output/association_drugbank.nq";
+		String drugbank_newfile=dataDir+"/input/full database_202011.xml";
 		
 		String line=null;
 		HashSet<String> targets=getTargets() ;
@@ -452,9 +454,9 @@ public static void generate_diseaseClass() throws IOException, ParserConfigurati
 		
 //		HashMap<String, HashSet<String>> diseaseToDrugBankTriple_filgered=filter(diseaseToDrugBankTriple,
 //				diseases);
-		new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/disease").mkdirs();
+		new File(dataDir+"/output/datasets/experiment/disease").mkdirs();
 		External_Testgenerator.writeDataToFolders_disease(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/disease",
+				dataDir+"/output/datasets/experiment/disease",
 				tripleSet,  
 				sortedList, 
 				labels, 
@@ -467,7 +469,7 @@ public static void generate_diseaseClass() throws IOException, ParserConfigurati
 
 public static void generate_ClinicCTClass(String annotation_file) throws IOException, ParserConfigurationException, SAXException {
 	
-	String drugbank_file="D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq";
+	String drugbank_file=dataDir+"/output/association_drugbank.nq";
 	String line=null;
 	HashSet<String> targets=getTargets() ;
 	HashSet<String> drugs=getDrugs();
@@ -493,7 +495,7 @@ public static void generate_ClinicCTClass(String annotation_file) throws IOExcep
 	}
 	
 	HashMap<String,HashSet<String>> disease_allTargets=new HashMap<>();
-	for(File file:new File("D:/data/drug-taget-network/Databases/data/release_4/input/disease_annotation/diseases").listFiles()){
+	for(File file:new File(dataDir+"/output/datasets/orignial/diseases").listFiles()){
 		updateDisease_target(file.getAbsolutePath(),  targets, disease_allTargets);
 	}
 	System.out.println(disease_allTargets);
@@ -565,9 +567,9 @@ public static void generate_ClinicCTClass(String annotation_file) throws IOExcep
     
     ArrayList<Map.Entry<String,HashSet<String>>>  sortedList=External_Testgenerator.sortMap(selected_disease_newPair); // disease, drugbank new triple
     
-	new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/clinicalCT").mkdirs();
+	new File(dataDir+"/output/datasets/experiment/clinicalCT").mkdirs();
 	External_Testgenerator.writeDataToFolders_clinicCT(
-			"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/clinicalCT",
+			dataDir+"/output/datasets/experiment/clinicalCT",
 			tripleSet,  
 			sortedList,  // disease, drugbank new triple
 			selected_diseaseToDrugBankTarget);
@@ -588,9 +590,9 @@ public static HashMap<String, HashSet<String>> filter(HashMap<String, HashSet<St
 	
 public static void check_diseaseClass() throws IOException, ParserConfigurationException, SAXException {
 		
-		String drugbank_file="D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq";
-		String drugbank_newfile="D:/data/drug-taget-network/Databases/data/release_4/input/full database_202011.xml";
-//		String drugbank_newfile="D:/data/drug-taget-network/Databases/data/release_4/input/full database.xml";
+		String drugbank_file=dataDir+"/output/datasets/orignial/network/association_drugbank.nq";
+		String drugbank_newfile=dataDir+"/input/full database_202011.xml";
+//		String drugbank_newfile=dataDir+"/input/full database.xml";
 		HashSet<String> targets=getTargets() ;
 		HashSet<String> drugs=getDrugs();
 		String line=null;
@@ -691,7 +693,7 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 		HashSet<HashSet<String>> return_set=new HashSet<>();
 		HashMap<String,HashSet<String>> clusterHashSet=new HashMap<>();
 		BufferedReader br=new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/diseaseSome_cluster.csv")));
+				dataDir+"/output/datasets/orignial/diseaseSome_cluster.csv")));
 		String line=null;
 		while((line=br.readLine())!=null) {
 			String[] elements=line.split(",");
@@ -740,7 +742,7 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 	
 	public static void generate_targetClass() throws IOException {
 		String line=null;
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial//network/association_drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/association_drugbank.nq")));
 		HashSet<String> tripleSet=new HashSet<>();
 		HashSet<String> targets=getTargets() ;
 		HashSet<String> drugs=getDrugs();
@@ -765,13 +767,13 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 		}
 		
 		Internal_Testgenerator generator=new Internal_Testgenerator();
-		generator.generate_targetClass(tripleSet, "D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/targetClass");
+		generator.generate_targetClass(tripleSet, dataDir+"/output/datasets/experiment/targetClass");
 	}
 	
 	
 	public static void generate_drugClass() throws IOException {
 		String line=null;
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/association_drugbank.nq")));
 		HashSet<String> tripleSet=new HashSet<>();
 		HashSet<String> targets=getTargets() ;
 		HashSet<String> drugs=getDrugs();
@@ -795,13 +797,13 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 			}
 		}
 		Internal_Testgenerator generator=new Internal_Testgenerator();
-		generator.generate_drugClass(tripleSet, "D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/drugClass");
+		generator.generate_drugClass(tripleSet, dataDir+"/output/datasets/experiment/drugClass");
 	}
 	
 	
 	public static HashSet<String> getTargets() throws IOException{
 		HashSet<String> targetSet=new HashSet<>();
-		BufferedReader bReader =new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/sequence.txt")));
+		BufferedReader bReader =new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/sequence.txt")));
 		String lineString=null;
 		while((lineString=bReader.readLine())!=null) {
 			String[] elementStrings=lineString.split("\t");
@@ -812,7 +814,7 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 	
 	public static HashSet<String> getDrugs() throws IOException{
 		HashSet<String> drugSet=new HashSet<>();
-		BufferedReader bReader =new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/smile.txt")));
+		BufferedReader bReader =new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/smile.txt")));
 		String lineString=null;
 		while((lineString=bReader.readLine())!=null) {
 			String[] elementStrings=lineString.split("\t");
@@ -824,7 +826,7 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 	
 	public static void generate_clinicalCT_genral(String annotation_file) throws IOException {
 		String line=null;
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/association_drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/association_drugbank.nq")));
 		HashSet<String> tripleSet=new HashSet<>();
 		HashSet<String> targets=getTargets() ;
 		HashSet<String> drugs=getDrugs();
@@ -851,13 +853,13 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 		Internal_Testgenerator generator=new Internal_Testgenerator();
 		
 		generator.generate_clinicalCT_general(annotation_file, tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/clinicalCT");
+				dataDir+"/output/datasets/experiment/clinicalCT");
 	}
 	
 	
 	public static void generate_genral() throws IOException {
 		String line=null;
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/association_drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/association_drugbank.nq")));
 		HashSet<String> tripleSet=new HashSet<>();
 		HashSet<String> targets=getTargets() ;
 		HashSet<String> drugs=getDrugs();
@@ -881,15 +883,16 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 				}
 			}
 		}
+		
 		Internal_Testgenerator generator=new Internal_Testgenerator();
 		
 		generator.generate_general(tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment");
+				dataDir+"/output/datasets/experiment/internal_general");
 	}
 	
 	public static void generate_internal() throws IOException {
 		String line=null;
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/association_drugbank.nq")));
 		HashSet<String> tripleSet=new HashSet<>();
 		HashSet<String> targets=getTargets() ;
 		HashSet<String> drugs=getDrugs();
@@ -916,20 +919,20 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 		Internal_Testgenerator generator=new Internal_Testgenerator();
 		
 		generator.generate_nonisolate(tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment");
+				dataDir+"/output/datasets/experiment/internal");
 		
 		generator.generate_semiisolate(tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment");
+				dataDir+"/output/datasets/experiment/internal");
 		
 		generator.generate_allisolate(tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment");
+				dataDir+"/output/datasets/experiment/internal");
 	}
 	
 	
 	
 	public static void generate_internal_clinicalCT(String annotation_file) throws IOException {
 		String line=null;
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/network/association_drugbank.nq")));
 		HashSet<String> tripleSet=new HashSet<>();
 		HashSet<String> targets=getTargets() ;
 		HashSet<String> drugs=getDrugs();
@@ -958,13 +961,13 @@ public static void check_diseaseClass() throws IOException, ParserConfigurationE
 		Internal_Testgenerator generator=new Internal_Testgenerator();
 		
 		generator.generate_clinicalCT_nonisolate(annotation_file, tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/clinicalCT");
+				dataDir+"/output/datasets/experiment/clinicalCT");
 		
 		generator.generate_clinicalCT_semiisolate(annotation_file, tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/clinicalCT");
+				dataDir+"/output/datasets/experiment/clinicalCT");
 		
 		generator.generate_clinicalCT_allisolate(annotation_file, tripleSet, 
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/clinicalCT");
+				dataDir+"/output/datasets/experiment/clinicalCT");
 	}
 	
 	public static void removeIsolate(String train, String test, String isolate_free) throws IOException {

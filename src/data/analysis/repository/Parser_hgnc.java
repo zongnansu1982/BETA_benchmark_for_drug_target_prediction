@@ -12,12 +12,12 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_hgnc {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/hgnc_complete_set.nq") ;
+		getproterty(dataDir+"/input/hgnc_complete_set.nq") ;
 		
-//		exploreAllObjects("D:/data/drug-taget-network/Databases/data/release_4/input/hgnc_complete_set.nq");
+//		exploreAllObjects(dataDir+"/input/hgnc_complete_set.nq");
 	}
 	
 	

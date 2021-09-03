@@ -17,17 +17,17 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import jsat.clustering.OPTICS.ExtractionMethod;
 
 public class KEGG {
-	
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	String drug_file="D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-drug.nq";
-	String disease_file="D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-disease.nq";
-	String gene_file="D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-genes.nq";
-	String module_file="D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-module.nq";
-	String pathway_file="D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-pathway.nq";
+	String drug_file=dataDir+"/input/done/kegg-drug.nq";
+	String disease_file=dataDir+"/input/done/kegg-disease.nq";
+	String gene_file=dataDir+"/input/done/kegg-genes.nq";
+	String module_file=dataDir+"/input/done/kegg-module.nq";
+	String pathway_file=dataDir+"/input/done/kegg-pathway.nq";
 	HashSet<String> printSet;
 	public KEGG() {
 		printSet=new HashSet<>();

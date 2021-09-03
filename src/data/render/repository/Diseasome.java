@@ -15,18 +15,18 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Diseasome {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		extract("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt",
-				"D:/data/drug-taget-network/Databases/data/release_4/output/association_diseasome.nq") ;
+		extract(dataDir+"/input/done/diseasome_dump.nt",
+				dataDir+"/output/association_diseasome.nq") ;
 		
 	}
 	
 			public static void extract(String input,String associationOut) throws IOException{
 			
-			HashMap<String, HashSet<String>> hgnc_uniprot=	HGNC.hgncToUniprot("D:/data/drug-taget-network/Databases/data/release_4/input/done/hgnc_complete_set.nq");
+			HashMap<String, HashSet<String>> hgnc_uniprot=	HGNC.hgncToUniprot(dataDir+"/input/done/hgnc_complete_set.nq");
 			
 			HashSet<String> diseasesHashSet=new HashSet<>();
 			HashSet<String> drugHashSet=new HashSet<>();

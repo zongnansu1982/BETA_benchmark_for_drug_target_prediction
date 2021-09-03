@@ -23,7 +23,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Generate_Annotation_Disease {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		HashMap<String, HashSet<String>> diseaseToGenes_diseasome=diseaseToGenes_diseasome();
@@ -61,7 +61,7 @@ public class Generate_Annotation_Disease {
 			String disease_name=diseassome_labels.get(entry.getKey()).toLowerCase().trim();
 			if(disease_name .contains("cancer")) {
 				
-			String fileString="D:/data/drug-taget-network/Databases/data/release_4/input/"+i+"_"+disease_name+".txt";
+			String fileString=dataDir+"/input/"+i+"_"+disease_name+".txt";
 			BufferedWriter bWriter =new BufferedWriter(new FileWriter(new File(fileString)));
 			System.out.println(i+"\t"+entry.getKey()+"\t"+disease_name+"\t"+entry.getValue().size()+"\t");
 			for(String string:entry.getValue()) {
@@ -93,7 +93,7 @@ public class Generate_Annotation_Disease {
 	}
 	
 	public static HashMap<String,String> readLabel() throws IOException{
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/input/done/diseasome_dump.nt")));
 		String line=null;
 		HashMap<String,String> lablesHashMap=new HashMap<>();
 		while((line=br.readLine())!=null) {
@@ -116,7 +116,7 @@ public class Generate_Annotation_Disease {
 	}
 	
 	public static HashMap<String,String> readLabel_drugbank() throws IOException{
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/input/done/drugbank.nq")));
 		String line=null;
 		HashMap<String,String> lablesHashMap=new HashMap<>();
 		while((line=br.readLine())!=null) {
@@ -139,7 +139,7 @@ public class Generate_Annotation_Disease {
 	}
 	
 	public static HashMap<String, HashSet<String>> diseasomeTargetToDrugBankTarget() throws IOException{
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/target_diseasome_drugbank.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/network/target_diseasome_drugbank.nq")));
 		String line=null;
 		HashMap<String, HashSet<String>> mappingHashMap=new HashMap<>();
 		while((line=br.readLine())!=null) {
@@ -168,7 +168,7 @@ public class Generate_Annotation_Disease {
 	
 	
 	public static HashMap<String, HashSet<String>> diseaseToGenes_pharmgkb() throws IOException{
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/association_pharmgkb.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/association_pharmgkb.nq")));
 		String line=null;
 		HashMap<String, HashSet<String>> mappingHashMap=new HashMap<>();
 		while((line=br.readLine())!=null) {
@@ -198,7 +198,7 @@ public class Generate_Annotation_Disease {
 	
 		
 	public static HashMap<String, HashSet<String>> diseaseToGenes_diseasome() throws IOException{
-		BufferedReader br=new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_diseasome.nq")));
+		BufferedReader br=new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/network/association_diseasome.nq")));
 		String line=null;
 		HashMap<String, HashSet<String>> mappingHashMap=new HashMap<>();
 		while((line=br.readLine())!=null) {

@@ -22,7 +22,7 @@ import org.semanticweb.yars.nx.parser.NxParser;
  *
  */
 public class GOA {
-
+	public static String dataDir="data_sample";
 	/**
 	 * @param args
 	 * @throws IOException 
@@ -30,8 +30,8 @@ public class GOA {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		extract("D:/data/drug-taget-network/Databases/data/release_4/input/done/goa_human.nq",
-				"D:/data/drug-taget-network/Databases/data/release_4/output/association_goa.nq");
+		extract(dataDir+"/input/done/goa_human.nq",
+				dataDir+"/output/association_goa.nq");
 		
 	}
 	

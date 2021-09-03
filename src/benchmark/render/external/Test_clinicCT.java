@@ -23,7 +23,7 @@ import org.xml.sax.SAXException;
 import java_cup.internal_error;
 
 public class Test_clinicCT {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		// TODO Auto-generated method stub
 		XMLParse();
@@ -31,7 +31,7 @@ public class Test_clinicCT {
 	
 	public static void XMLParse() throws ParserConfigurationException, SAXException, IOException {
 		HashMap<String,Integer> counter =new HashMap<>();
-		for(File dir:new File("D:/data/drug-taget-network/Databases/data/release_4/input/clinicCT/").listFiles()) {
+		for(File dir:new File(dataDir+"/input/clinicCT/").listFiles()) {
 			if(dir.isDirectory()) {
 				for(File file:dir.listFiles()) {
 					XMLParse(file.getAbsolutePath(), counter);
@@ -41,7 +41,7 @@ public class Test_clinicCT {
 		
 		ArrayList<Map.Entry<String,Integer>> list=sortMap(counter);
 		
-		BufferedWriter bWriter =new BufferedWriter(new FileWriter(new File("D:/data/drug-taget-network/Databases/data/release_4/input/clinicCT_counter.tsv")));
+		BufferedWriter bWriter =new BufferedWriter(new FileWriter(new File(dataDir+"/input/clinicCT_counter.tsv")));
 		for (int i = 0; i < list.size(); i++) {
 			bWriter.write(list.get(i).getKey()+"\t"+list.get(i).getValue()+"\n");
 		}

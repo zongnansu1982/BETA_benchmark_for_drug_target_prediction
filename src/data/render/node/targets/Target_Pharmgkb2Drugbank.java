@@ -15,7 +15,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Target_Pharmgkb2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
@@ -24,9 +24,9 @@ public class Target_Pharmgkb2Drugbank {
 	
 	public static void writeMapping(String output) throws IOException {
 		HashMap<String,HashSet<String>> pharmgkb=Target_Pharmgkb2Drugbank.getPharmkbg
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/pharmgkb_genes.nq"); //uniprot, pharmgkb
+				(dataDir+"/input/done/pharmgkb_genes.nq"); //uniprot, pharmgkb
 		HashMap<String,HashSet<String>> drugbank=Target_Pharmgkb2Drugbank.getDrugBank
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
+				(dataDir+"/input/done/drugbank.nq");
 		writeMapping(pharmgkb,drugbank,output);
 	}
 	

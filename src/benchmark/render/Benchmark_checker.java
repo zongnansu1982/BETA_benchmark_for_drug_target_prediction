@@ -13,7 +13,7 @@ import org.netlib.util.booleanW;
 import org.tukaani.xz.check.Check;
 
 public class Benchmark_checker {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		HashSet<String> targets=getTargets();
@@ -27,9 +27,9 @@ public class Benchmark_checker {
 		onelayers.add("disease");
 		onelayers.add("clinicalCT");
 		
-		BufferedWriter beWriter =new BufferedWriter(new FileWriter(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/debug.txt")));
+		BufferedWriter beWriter =new BufferedWriter(new FileWriter(new File(dataDir+"/output/datasets/experiment/debug.txt")));
 		for(String twolayer:twolayers) {
-			for(File dir: new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/"+twolayer).listFiles()) {
+			for(File dir: new File(dataDir+"/output/datasets/experiment/"+twolayer).listFiles()) {
 				for(File file: dir.listFiles()) {
 					check( file.getAbsolutePath(),  drugs,  targets, beWriter) ;
 				}
@@ -37,7 +37,7 @@ public class Benchmark_checker {
 		}
 		
 		for(String onelayer:onelayers) {
-			for(File file: new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/"+onelayer).listFiles()) {
+			for(File file: new File(dataDir+"/output/datasets/experiment/"+onelayer).listFiles()) {
 				check( file.getAbsolutePath(),  drugs,  targets, beWriter) ;
 			}
 		}
@@ -106,6 +106,7 @@ public class Benchmark_checker {
 				System.out.println("@@@ -> "+ elements[1]+" is not covered");
 				remove=true;
 			}
+			
 			if(elements[2].equals("true")) {
 				positive.add(line);
 			}
@@ -117,14 +118,14 @@ public class Benchmark_checker {
 		
 		if(file.contains("test")){
 			if((positive.size()==0||negative.size()==0)) {
-				System.out.println("@@@ -> positive.size()==0||negative.size()==0 is not covered");
+				System.out.println(file+ "@@@ test->  positive.size()==0||negative.size()==0 is not covered, "+positive.size()+" "+negative.size());
 				remove=true;
 			}
 		}
 		
 		if(file.contains("train")) {
 			if((positive.size()==0||negative.size()>0)) {
-				System.out.println("@@@ -> positive.size()==0||negative.size()>0 is not covered");
+				System.out.println(file+ "@@@ train-> positive.size()==0||negative.size()>0 is not covered, "+positive.size()+" "+negative.size());
 				remove=true;
 			}
 		}
@@ -135,7 +136,7 @@ public class Benchmark_checker {
 	
 	public static HashSet<String> getTargets() throws IOException{
 		HashSet<String> targetSet=new HashSet<>();
-		BufferedReader bReader =new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/sequence.txt")));
+		BufferedReader bReader =new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/sequence.txt")));
 		String lineString=null;
 		while((lineString=bReader.readLine())!=null) {
 			String[] elementStrings=lineString.split("\t");
@@ -146,7 +147,7 @@ public class Benchmark_checker {
 	
 	public static HashSet<String> getDrugs() throws IOException{
 		HashSet<String> drugSet=new HashSet<>();
-		BufferedReader bReader =new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/smile.txt")));
+		BufferedReader bReader =new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/smile.txt")));
 		String lineString=null;
 		while((lineString=bReader.readLine())!=null) {
 			String[] elementStrings=lineString.split("\t");

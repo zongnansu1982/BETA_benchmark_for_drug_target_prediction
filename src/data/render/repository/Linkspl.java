@@ -17,7 +17,7 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import javassist.expr.NewArray;
 
 public class Linkspl {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -28,7 +28,7 @@ public class Linkspl {
 		HashMap<String, HashSet<String>> hugotoPharmgkb=new HashMap<>();
 		
 		BufferedReader  br = new BufferedReader(new FileReader(new File
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/pharmgkb_genes.nq")));
+				(dataDir+"/input/done/pharmgkb_genes.nq")));
 		 String line=null;
 		while((line=br.readLine())!=null){
 			if(!line.contains("\"")){

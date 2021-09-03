@@ -7,16 +7,16 @@ import java.util.Map.Entry;
 import jsat.classifiers.neuralnetwork.regularizers.Max2NormRegularizer;
 
 public class Benchmark_checkTopKContain {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		
-		HashSet<String> top_10_drugs=getFiles("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/top10/drugClass");
-		HashSet<String> top_10_targets=getFiles("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/top10/targetClass");
+		HashSet<String> top_10_drugs=getFiles(dataDir+"/output/datasets/experiment/top10/drugClass");
+		HashSet<String> top_10_targets=getFiles(dataDir+"/output/datasets/experiment/top10/targetClass");
 		
-		HashSet<String> top_5_drugs=getFiles("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/drugClass");
-		HashSet<String> top_5_targets=getFiles("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/experiment/targetClass");
+		HashSet<String> top_5_drugs=getFiles(dataDir+"/output/datasets/experiment/drugClass");
+		HashSet<String> top_5_targets=getFiles(dataDir+"/output/datasets/experiment/targetClass");
 		
 		System.out.println("top_5_drugs: "+top_5_drugs.size());
 		System.out.println("top_5_targets: "+top_5_targets.size());

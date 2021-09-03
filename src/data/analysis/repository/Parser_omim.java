@@ -15,13 +15,13 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_omim {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-//		getproterty_advance("D:/data/drug-taget-network/Databases/data/release_4/input/omim.nq") ;
-//		checkProperty_disease("D:/data/drug-taget-network/Databases/data/release_4/input/omim.nq");
-//		checkProperty_gene("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq");
-		checkProperty_directGene("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq") ;
+//		getproterty_advance(dataDir+"/input/omim.nq") ;
+//		checkProperty_disease(dataDir+"/input/omim.nq");
+//		checkProperty_gene(dataDir+"/input/done/omim.nq");
+		checkProperty_directGene(dataDir+"/input/done/omim.nq") ;
 	}
 	
 	

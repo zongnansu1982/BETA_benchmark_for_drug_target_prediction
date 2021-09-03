@@ -23,7 +23,7 @@ import java_cup.internal_error;
 import jsat.classifiers.DDAG;
 
 public class NegativeGenerator_disease {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 	}
@@ -478,7 +478,7 @@ public NegativeSetBean generate(long seed, Double ratio,String type, HashSet<Str
 	
 	
 	public HashSet<String> getDrugsWithSmile() throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/smile.txt")));
+		BufferedReader br = new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/smile.txt")));
 		String line=null;
 		HashSet<String> drugs=new HashSet<>();
 		while((line=br.readLine())!=null){
@@ -490,7 +490,7 @@ public NegativeSetBean generate(long seed, Double ratio,String type, HashSet<Str
 
 	public HashSet<String> geTargetsWithSequence() throws IOException {
 		
-		BufferedReader br = new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/sequence.txt")));
+		BufferedReader br = new BufferedReader(new FileReader(new File(dataDir+"/output/datasets/orignial/sequence.txt")));
 		String line=null;
 		HashSet<String> targets=new HashSet<>();
 		while((line=br.readLine())!=null){
@@ -503,7 +503,7 @@ public NegativeSetBean generate(long seed, Double ratio,String type, HashSet<Str
 	
 	public void readAllNode() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D://data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+				dataDir+"/input/done/drugbank.nq")));
 		String line=null;
 		HashSet<String> targets=geTargetsWithSequence();
 		 HashSet<String> drugs=getDrugsWithSmile();

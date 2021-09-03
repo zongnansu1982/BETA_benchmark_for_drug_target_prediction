@@ -17,21 +17,21 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import jsat.regression.StochasticGradientBoosting;
 
 public class Target_GOA2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		HashMap<String, HashSet<String>> uniprot2drugbank=getUniprot2Drugbank(
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
-		Target_GOA2Drugbank.extract("D:/data/drug-taget-network/Databases/data/release_4/input/done/goa_human.nq",
+				dataDir+"/input/done/drugbank.nq");
+		Target_GOA2Drugbank.extract(dataDir+"/input/done/goa_human.nq",
 				uniprot2drugbank,
-				"D:/data/drug-taget-network/Databases/data/release_4/output/target_mapping_goa.nq");
+				dataDir+"/output/target_mapping_goa.nq");
 	}
 	
 	
 public static void writeMapping(String output) throws IOException {
 	HashMap<String, HashSet<String>> uniprot2drugbank=getUniprot2Drugbank(
-			"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
-	Target_GOA2Drugbank.extract("D:/data/drug-taget-network/Databases/data/release_4/input/done/goa_human.nq",
+			dataDir+"/input/done/drugbank.nq");
+	Target_GOA2Drugbank.extract(dataDir+"/input/done/goa_human.nq",
 			uniprot2drugbank,
 			output);
 }

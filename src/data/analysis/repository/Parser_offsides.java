@@ -15,12 +15,12 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_offsides {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		getproterty_advance("D:/data/drug-taget-network/Databases/data/release_4/input/offsides.nq") ;
-//		checkProperty_disease("D:/data/drug-taget-network/Databases/data/release_4/input/offsides.nq");
-//		checkProperty_gene("D:/data/drug-taget-network/Databases/data/release_4/input/offsides.nq");
+		getproterty_advance(dataDir+"/input/offsides.nq") ;
+//		checkProperty_disease(dataDir+"/input/offsides.nq");
+//		checkProperty_gene(dataDir+"/input/offsides.nq");
 	}
 	
 	

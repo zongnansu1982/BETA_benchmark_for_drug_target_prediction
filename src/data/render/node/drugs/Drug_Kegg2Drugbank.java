@@ -19,7 +19,7 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import jsat.regression.StochasticGradientBoosting;
 
 public class Drug_Kegg2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
@@ -27,8 +27,8 @@ public class Drug_Kegg2Drugbank {
 	}
 	
 	public static void writeMapping(String output) throws IOException {
-		HashMap<String,HashSet<String>> drugbank_1=Drug_Kegg2Drugbank.getKegg("D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-drug.nq"); // kegg, drugbank
-		HashMap<String,HashSet<String>> drugbank_2=Drug_Kegg2Drugbank.getDrugBank("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
+		HashMap<String,HashSet<String>> drugbank_1=Drug_Kegg2Drugbank.getKegg(dataDir+"/input/done/kegg-drug.nq"); // kegg, drugbank
+		HashMap<String,HashSet<String>> drugbank_2=Drug_Kegg2Drugbank.getDrugBank(dataDir+"/input/done/drugbank.nq");
 		
 		writeMapping(drugbank_1,drugbank_2, output);
 	}

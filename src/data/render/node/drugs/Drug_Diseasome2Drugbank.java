@@ -16,7 +16,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Drug_Diseasome2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
@@ -26,7 +26,7 @@ public class Drug_Diseasome2Drugbank {
 	
 	
 	public static void writeMapping(String output) throws IOException {
-		Drug_Diseasome2Drugbank.diseasome("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt",
+		Drug_Diseasome2Drugbank.diseasome(dataDir+"/input/done/diseasome_dump.nt",
 				output);
 	}
 	public static void diseasome(String input, String output) throws IOException{

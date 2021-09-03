@@ -27,13 +27,13 @@ import org.xml.sax.SAXException;
 
 
 public class VersioningbasedDrugBankXML {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
 		// TODO Auto-generated method stub
 	
 		HashMap<String,String> xml_relations=extract_newDrugBankRelation
-				("D:/data/drug-taget-network/Databases/data/release_4/input/full database.xml");
-		Set<String> retained_relationSet=Retain("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/association_drugbank.nq", 
+				(dataDir+"/input/full database.xml");
+		Set<String> retained_relationSet=Retain(dataDir+"/output/datasets/orignial/association_drugbank.nq", 
 				xml_relations);
 		
 		System.out.println("xml_relations: "+xml_relations.size());

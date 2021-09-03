@@ -16,12 +16,12 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import org.tukaani.xz.check.Check;
 
 public class Parser_linkspl {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-//		getproterty_advance("D:/data/drug-taget-network/Databases/data/release_4/input/linkspl.nt") ;
+//		getproterty_advance(dataDir+"/input/linkspl.nt") ;
 		
-		checkProperty("D:/data/drug-taget-network/Databases/data/release_4/input/done/linkspl.nt");
+		checkProperty(dataDir+"/input/done/linkspl.nt");
 	}
 	
 	public static void checkProperty(String input) throws IOException {

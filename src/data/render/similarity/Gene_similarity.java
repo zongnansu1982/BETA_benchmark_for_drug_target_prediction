@@ -16,7 +16,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Gene_similarity {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		HashSet<String> set_similarity=pull_gene_fromSimilarity();
@@ -26,7 +26,7 @@ public class Gene_similarity {
 	public static HashSet<String> pull_gene_fromSimilarity() throws IOException {
 		HashSet<String> gene_set=new HashSet<>();
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/gene_similarity_matrix_cosine.txt")));
+				dataDir+"/output/datasets/orignial/gene_similarity_matrix_cosine.txt")));
 		String line=null;
 		int i=0;
 		while((line=br.readLine())!=null){
@@ -43,7 +43,7 @@ public class Gene_similarity {
 	
 	public static HashSet<String> pull_gene_fromDrugBank() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank_v3.nq")));
+				dataDir+"/input/done/drugbank_v3.nq")));
 		String line=null;
 		HashSet<String> gene_set=new HashSet<>();
 		while((line=br.readLine())!=null){

@@ -21,20 +21,20 @@ import jsat.regression.StochasticGradientBoosting;
 
 
 public class Disease_Diseasome2Omim {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
 		/**
 		 *  Use UMLS and dbpedia to get diseasome to omim
 		 */
-		HashMap<String,HashSet<String>> umls_2=Disease_Sider2Omim.getOmim("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq"); //umls,Omim
-		HashMap<String,HashSet<String>> umls_1=Disease_Sider2Omim.getSider("D:/data/drug-taget-network/Databases/data/release_4/input/done/sider_dump.nt");//umls,sider
+		HashMap<String,HashSet<String>> umls_2=Disease_Sider2Omim.getOmim(dataDir+"/input/done/omim.nq"); //umls,Omim
+		HashMap<String,HashSet<String>> umls_1=Disease_Sider2Omim.getSider(dataDir+"/input/done/sider_dump.nt");//umls,sider
 		HashMap<String,HashSet<String>> siderToOmim=Disease_Sider2Omim.getSiderToOmim(umls_1, umls_2); // sider, omim
 		HashMap<String,HashSet<String>> DiseasetoSider=Disease_Diseasome2Omim.getDiseasome
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt"); // disease, sider
+				(dataDir+"/input/done/diseasome_dump.nt"); // disease, sider
 		
-		HashMap<String,HashSet<String>> dbpediaTodisease=DBpedia.getDiseaseHgnc("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt");
+		HashMap<String,HashSet<String>> dbpediaTodisease=DBpedia.getDiseaseHgnc(dataDir+"/input/done/diseasome_dump.nt");
 		HashMap<String,HashSet<String>> dbpediaToOmim=DBpedia.getDBpediaMapping(dbpediaTodisease);
 		
 		
@@ -47,13 +47,13 @@ public class Disease_Diseasome2Omim {
 		/**
 		 *  Use UMLS and dbpedia to get diseasome to omim
 		 */
-		HashMap<String,HashSet<String>> umls_2=Disease_Sider2Omim.getOmim("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq"); //umls,Omim
-		HashMap<String,HashSet<String>> umls_1=Disease_Sider2Omim.getSider("D:/data/drug-taget-network/Databases/data/release_4/input/done/sider_dump.nt");//umls,sider
+		HashMap<String,HashSet<String>> umls_2=Disease_Sider2Omim.getOmim(dataDir+"/input/done/omim.nq"); //umls,Omim
+		HashMap<String,HashSet<String>> umls_1=Disease_Sider2Omim.getSider(dataDir+"/input/done/sider_dump.nt");//umls,sider
 		HashMap<String,HashSet<String>> siderToOmim=Disease_Sider2Omim.getSiderToOmim(umls_1, umls_2); // sider, omim
 		HashMap<String,HashSet<String>> DiseasetoSider=Disease_Diseasome2Omim.getDiseasome
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt"); // disease, sider
+				(dataDir+"/input/done/diseasome_dump.nt"); // disease, sider
 		
-		HashMap<String,HashSet<String>> dbpediaTodisease=DBpedia.getDiseaseHgnc("D:/data/drug-taget-network/Databases/data/release_4/input/done/diseasome_dump.nt");
+		HashMap<String,HashSet<String>> dbpediaTodisease=DBpedia.getDiseaseHgnc(dataDir+"/input/done/diseasome_dump.nt");
 		HashMap<String,HashSet<String>> dbpediaToOmim=DBpedia.getDBpediaMapping(dbpediaTodisease);
 		
 		
@@ -62,7 +62,7 @@ public class Disease_Diseasome2Omim {
 	}
 	
 	public static HashMap<String,HashSet<String>> getDiseasome(String input) throws IOException{
-		HashMap<String,HashSet<String>> dbpediaToSider=getSider("D:/data/drug-taget-network/Databases/data/release_4/input/done/sider_dump.nt");
+		HashMap<String,HashSet<String>> dbpediaToSider=getSider(dataDir+"/input/done/sider_dump.nt");
 		BufferedReader br = new BufferedReader(new FileReader(new File(input)));
 		String line=null;
 		HashMap<String,HashSet<String>> DiseasetoSider=new HashMap<>();

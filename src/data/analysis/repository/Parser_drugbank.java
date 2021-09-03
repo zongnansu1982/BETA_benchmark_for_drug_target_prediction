@@ -20,11 +20,11 @@ import org.semanticweb.yars.nx.parser.NxParser;
 import java_cup.internal_error;
 
 public class Parser_drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-//		getproterty_advance("D:/data/drug-taget-network/Databases/data/release_4/input/drugbank.nq") ;
-		checkProperty("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
+//		getproterty_advance(dataDir+"/input/drugbank.nq") ;
+		checkProperty(dataDir+"/input/done/drugbank.nq");
 	}
 	
 	public static void checkProperty(String input) throws IOException {

@@ -12,11 +12,11 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_kegg_disease {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-disease.nq") ;
-//		checkSameValue("D:/data/drug-taget-network/Databases/data/release_4/input/kegg-disease.nq") ;
+		getproterty(dataDir+"/input/done/kegg-disease.nq") ;
+//		checkSameValue(dataDir+"/input/kegg-disease.nq") ;
 		
 
 	}

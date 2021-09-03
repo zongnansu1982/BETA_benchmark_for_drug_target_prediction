@@ -17,7 +17,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Target_Irefindex2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -27,7 +27,7 @@ public class Target_Irefindex2Drugbank {
 public static void writeMapping( String outfile) throws IOException{
 	HashMap<String, HashSet<String>> uniprotToDrugbank=  getUniprotToDrug();
 		BufferedWriter bw_2 =new BufferedWriter(new FileWriter(new File(outfile)));
-		BufferedReader br = new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/done/irefindex-all.nq")));
+		BufferedReader br = new BufferedReader(new FileReader(new File(dataDir+"/input/done/irefindex-all.nq")));
 		String line=null;
 		HashSet<String> sameAs=new HashSet<String>();
 		while((line=br.readLine())!=null){
@@ -68,7 +68,7 @@ public static void writeMapping( String outfile) throws IOException{
 
 	public static HashMap<String, HashSet<String>> getUniprotToDrug() throws IOException {
 		HashMap<String, HashSet<String>> uniprotToDrugbank=new HashMap<>();
-		BufferedReader br = new BufferedReader(new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+		BufferedReader br = new BufferedReader(new FileReader(new File(dataDir+"/input/done/drugbank.nq")));
 		String line=null;
 		while((line=br.readLine())!=null){
 			if(!line.contains("\"")){

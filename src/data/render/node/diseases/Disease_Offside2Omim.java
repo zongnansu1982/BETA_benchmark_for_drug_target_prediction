@@ -16,14 +16,14 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Disease_Offside2Omim {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}
 	
 	public static void writeMapping(String output) throws IOException {
-		getOmim("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq",
+		getOmim(dataDir+"/input/done/omim.nq",
 				output);
 	}
 	public static void getOmim(String input, String output) throws IOException{

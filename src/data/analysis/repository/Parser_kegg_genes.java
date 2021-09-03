@@ -12,17 +12,17 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_kegg_genes {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-genes.nq") ;
-//		checkSameValue("D:/data/drug-taget-network/Databases/data/release_4/input/kegg-genes.nq");
+		getproterty(dataDir+"/input/done/kegg-genes.nq") ;
+//		checkSameValue(dataDir+"/input/kegg-genes.nq");
 	}
 	
 	
 	public static HashSet<String> getDiseaseToGene() throws IOException{
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/input/kegg-disease.nq")));
+				dataDir+"/input/kegg-disease.nq")));
 		String line=null;
 		HashSet<String> ps_1=new HashSet<>();
 		HashSet<String> ps_2=new HashSet<>();

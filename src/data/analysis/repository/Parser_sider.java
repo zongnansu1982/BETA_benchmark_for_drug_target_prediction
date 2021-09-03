@@ -12,12 +12,12 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_sider {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/sider-adverse_effects_raw.nq") ;
-		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/done/no-use/sider-label_mapping.nq") ;
-//		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/sider_dump.nt") ;
+//		getproterty(dataDir+"/input/sider-adverse_effects_raw.nq") ;
+		getproterty(dataDir+"/input/done/no-use/sider-label_mapping.nq") ;
+//		getproterty(dataDir+"/input/sider_dump.nt") ;
 		
 	}
 	

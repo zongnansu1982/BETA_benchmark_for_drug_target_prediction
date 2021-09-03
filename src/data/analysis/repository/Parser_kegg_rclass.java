@@ -12,10 +12,10 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Parser_kegg_rclass {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		getproterty("D:/data/drug-taget-network/Databases/data/release_4/input/kegg-rclass.nq") ;
+		getproterty(dataDir+"/input/kegg-rclass.nq") ;
 	}
 	
 	

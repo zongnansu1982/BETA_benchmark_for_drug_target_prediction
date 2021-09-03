@@ -16,7 +16,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Drug_Offside2Drugbank {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -25,13 +25,13 @@ public class Drug_Offside2Drugbank {
 	
 	public static void writeMapping(String output) throws IOException {
 		HashMap<String,HashSet<String>> pubchem_compound2drugbank_0 =offside2drugank
-				("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq"); //offside2drugbank
+				(dataDir+"/input/done/drugbank.nq"); //offside2drugbank
 		
-		HashMap<String,HashSet<String>> pubchem_compound2drugbank_2=offside2drugank_viaKegg("D:/data/drug-taget-network/Databases/data/release_4/input/done/kegg-drug.nq", 
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
+		HashMap<String,HashSet<String>> pubchem_compound2drugbank_2=offside2drugank_viaKegg(dataDir+"/input/done/kegg-drug.nq", 
+				dataDir+"/input/done/drugbank.nq");
 		
-		HashMap<String,HashSet<String>> pubchem_compound2drugbank_1=offside2drugank_viaPharGKB("D:/data/drug-taget-network/Databases/data/release_4/input/done/pharmgkb_drugs.nq", 
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq");
+		HashMap<String,HashSet<String>> pubchem_compound2drugbank_1=offside2drugank_viaPharGKB(dataDir+"/input/done/pharmgkb_drugs.nq", 
+				dataDir+"/input/done/drugbank.nq");
 		
 		HashMap<String,HashSet<String>> pubchem_compound2drugbank=new HashMap<>();
 		genrateMap(pubchem_compound2drugbank, pubchem_compound2drugbank_0);

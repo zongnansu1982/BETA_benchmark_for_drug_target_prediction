@@ -20,7 +20,7 @@ import com.github.andrewoma.dexx.collection.internal.adapter.SetAdapater;
 import javassist.expr.NewArray;
 
 public class Generate_feature {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 	}
@@ -28,7 +28,7 @@ public class Generate_feature {
 	
 	public static void pull_chemical(String outfile) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+				dataDir+"/input/done/drugbank.nq")));
 		String line=null;
 		HashMap<String,HashSet<String>> calculated_properties=new HashMap<>();
 		HashSet<String> smile_subject=new HashSet<>();
@@ -85,7 +85,7 @@ public class Generate_feature {
 	
 	public static void pull_gene(String outfile) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank_v3.nq")));
+				dataDir+"/input/done/drugbank_v3.nq")));
 		String line=null;
 		HashMap<String,String> sequence_subject=new HashMap<>();
 		

@@ -33,7 +33,7 @@ import benchmark.render.Benchmark_checker;
 import java_cup.internal_error;
 
 public class Internal_Testgenerator {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
@@ -41,7 +41,7 @@ public class Internal_Testgenerator {
 
 	public static HashMap<String, HashSet<String>> getUniprotToDrugbank() throws IOException {
 		BufferedReader br = new BufferedReader(
-				new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+				new FileReader(new File(dataDir+"/input/done/drugbank.nq")));
 		String line = null;
 		HashMap<String, HashSet<String>> valueHashMap = new HashMap<>();
 		while ((line = br.readLine()) != null) {
@@ -76,7 +76,7 @@ public class Internal_Testgenerator {
 
 	public static HashMap<String, HashSet<String>> getTripleFromObject() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq")));
+				dataDir+"/output/association_drugbank.nq")));
 		String line = null;
 		HashSet<String> drugs = getDrugs();
 		HashSet<String> targets = getTargets();
@@ -187,7 +187,7 @@ public class Internal_Testgenerator {
 		HashMap<String, HashSet<String>> objectToTripleHashMap = getTripleFromObject();
 
 		BufferedReader br = new BufferedReader(
-				new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/PTHR15.0_human")));
+				new FileReader(new File(dataDir+"/input/PTHR15.0_human")));
 		String lineString = null;
 
 		HashMap<String, HashSet<String>> pantherMolecular_uniprot = new HashMap<>();
@@ -778,7 +778,7 @@ public class Internal_Testgenerator {
 
 	public static HashMap<String, HashSet<String>> readDrugBankClass() throws IOException {
 		BufferedReader br = new BufferedReader(
-				new FileReader(new File("D:/data/drug-taget-network/Databases/data/release_4/input/done/drugbank.nq")));
+				new FileReader(new File(dataDir+"/input/done/drugbank.nq")));
 		HashSet<String> drugs = getDrugs();
 		String line = null;
 		HashMap<String, HashSet<String>> valueHashMap = new HashMap<>();
@@ -828,7 +828,7 @@ public class Internal_Testgenerator {
 		HashSet<String> drugs = getDrugs();
 		HashMap<String, HashSet<String>> linkplToDrugbank = new HashMap<>();
 		BufferedReader br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/drug_linkspl_drugbank.nq")));
+				dataDir+"/output/drug_linkspl_drugbank.nq")));
 		String line = null;
 		while ((line = br.readLine()) != null) {
 			InputStream inputStream = new ByteArrayInputStream(line.getBytes());
@@ -855,7 +855,7 @@ public class Internal_Testgenerator {
 		System.out.println("linkplToDrugbank: " + linkplToDrugbank.size());
 		HashMap<String, HashSet<String>> drugbankClass_1 = new HashMap<>();
 		br = new BufferedReader(new FileReader(new File(
-				"D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_linkspl.nq")));
+				dataDir+"/output/association_linkspl.nq")));
 		line = null;
 		while ((line = br.readLine()) != null) {
 			InputStream inputStream = new ByteArrayInputStream(line.getBytes());
@@ -910,7 +910,7 @@ public class Internal_Testgenerator {
 
 		HashSet<String> positiveSet = generateConnectedAssociation_general(triples);
 
-		System.out.println(" data selected ...");
+		System.out.println(" data selected ..."+ positiveSet.size()+" / "+ triples.size());
 
 		writeDataToFolders_general(10, triples, dir, positiveSet);
 
@@ -1337,7 +1337,7 @@ public class Internal_Testgenerator {
 	
 	
 	public static HashSet<String> getDrugTarget() throws IOException {
-		String drugbank_file="D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/network/association_drugbank.nq";
+		String drugbank_file=dataDir+"/output/datasets/orignial/network/association_drugbank.nq";
 		
 		String line=null;
 		HashSet<String> targets=getTargets() ;
@@ -1380,7 +1380,7 @@ public class Internal_Testgenerator {
 	public static HashMap<String,HashSet<String>>  getTest_clinicalCT(String annotationFile) throws IOException {
           
           HashMap<String,HashSet<String>> disease_allTargets=new HashMap<>();
-  		for(File file:new File("D:/data/drug-taget-network/Databases/data/release_4/input/disease_annotation/diseases").listFiles()){
+  		for(File file:new File(dataDir+"/input/disease_annotation/diseases").listFiles()){
   			updateDisease_target(file.getAbsolutePath(),  disease_allTargets);
   		}
   		System.out.println(disease_allTargets);
@@ -1781,7 +1781,7 @@ public class Internal_Testgenerator {
 	public static HashSet<String> getTargets() throws IOException {
 		HashSet<String> targetSet = new HashSet<>();
 		BufferedReader bReader = new BufferedReader(new FileReader(
-				new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/sequence.txt")));
+				new File(dataDir+"/output/datasets/orignial/sequence.txt")));
 		String lineString = null;
 		while ((lineString = bReader.readLine()) != null) {
 			String[] elementStrings = lineString.split("\t");
@@ -1793,7 +1793,7 @@ public class Internal_Testgenerator {
 	public static HashSet<String> getDrugs() throws IOException {
 		HashSet<String> drugSet = new HashSet<>();
 		BufferedReader bReader = new BufferedReader(new FileReader(
-				new File("D:/data/drug-taget-network/Databases/data/release_4/output/datasets/orignial/smile.txt")));
+				new File(dataDir+"/output/datasets/orignial/smile.txt")));
 		String lineString = null;
 		while ((lineString = bReader.readLine()) != null) {
 			String[] elementStrings = lineString.split("\t");

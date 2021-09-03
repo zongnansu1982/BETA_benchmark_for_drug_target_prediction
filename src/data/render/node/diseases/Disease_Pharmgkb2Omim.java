@@ -17,7 +17,7 @@ import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.NxParser;
 
 public class Disease_Pharmgkb2Omim {
-
+	public static String dataDir="data_sample";
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
@@ -26,10 +26,10 @@ public class Disease_Pharmgkb2Omim {
 	
 	public static void writeMapping(String output) throws IOException {
 		HashMap<String,HashSet<String>> umls_1=Disease_Pharmgkb2Omim.
-				getPharmgkb("D:/data/drug-taget-network/Databases/data/release_4/input/done/pharmgkb_diseases.nq"); //umls,pharmgkb
+				getPharmgkb(dataDir+"/input/done/pharmgkb_diseases.nq"); //umls,pharmgkb
 		
 		HashMap<String,HashSet<String>> umls_2=Disease_Pharmgkb2Omim.
-				getOmim("D:/data/drug-taget-network/Databases/data/release_4/input/done/omim.nq");
+				getOmim(dataDir+"/input/done/omim.nq");
 		
 		writeMapping(umls_1,umls_2,output);
 	}
