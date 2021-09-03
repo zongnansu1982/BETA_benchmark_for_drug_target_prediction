@@ -210,56 +210,61 @@ public class PharmGKB {
 			String obj_2_association,
 			String outputassociationType,
 			HashSet<String> printset) {
-		for(String association:resouce_type_map.get(associationType)) {
-			if(resouce_association_map.containsKey(association)) {
-				String obj_1="";
-				String obj_2="";
-				for(String triple:resouce_association_map.get(association)) {
-					InputStream inputStream = new ByteArrayInputStream(triple.getBytes());
-					NxParser nxp = new NxParser();
-					nxp.parse(inputStream);
-					while (nxp.hasNext()) {
-						Node[] quard = nxp.next();
-						String s = quard[0].toString().trim().toLowerCase();
-						String p = quard[1].toString().trim().toLowerCase();
-						String o = quard[2].toString().trim().toLowerCase();
-					
-						if(obj_1_association.equals(obj_2_association)) {
-							if(p.equals(obj_1_association)){
-								if(obj_1.equals("")) {
+		/**
+		 *  bug fixed 09/02/2021
+		 */
+		
+		if(resouce_type_map.containsKey(associationType)) {
+			for(String association:resouce_type_map.get(associationType)) {
+				if(resouce_association_map.containsKey(association)) {
+					String obj_1="";
+					String obj_2="";
+					for(String triple:resouce_association_map.get(association)) {
+						InputStream inputStream = new ByteArrayInputStream(triple.getBytes());
+						NxParser nxp = new NxParser();
+						nxp.parse(inputStream);
+						while (nxp.hasNext()) {
+							Node[] quard = nxp.next();
+							String s = quard[0].toString().trim().toLowerCase();
+							String p = quard[1].toString().trim().toLowerCase();
+							String o = quard[2].toString().trim().toLowerCase();
+						
+							if(obj_1_association.equals(obj_2_association)) {
+								if(p.equals(obj_1_association)){
+									if(obj_1.equals("")) {
+										obj_1=o;
+									}else {
+										obj_2=o;
+									}
+								}
+							}else {
+								if(p.equals(obj_1_association)) {
 									obj_1=o;
-								}else {
+								}
+								if(p.equals(obj_2_association)) {
 									obj_2=o;
 								}
 							}
-						}else {
-							if(p.equals(obj_1_association)) {
-								obj_1=o;
-							}
-							if(p.equals(obj_2_association)) {
-								obj_2=o;
-							}
 						}
+					}	
+					
+					printset.add(obj_1 + " " + "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>" + " " + obj_1_association + " .");
+					printset.add(obj_2 + " " + "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>" + " " + obj_2_association + " .");
+					
+					if(obj_1_association.equals(obj_2_association)) {
+						printset.add(association+" "+outputassociationType+" "+obj_1+" .");
+						printset.add(association+" "+outputassociationType+" "+obj_2+" .");
+						printset.add(associationType + " " + outputassociationType + " " + obj_1_association + " .");
+					}else {
+						printset.add(obj_1+" "+outputassociationType+" "+obj_2+" .");
+						printset.add(obj_1_association + " " + outputassociationType + " " + obj_2_association + " .");
 					}
-				}	
-				
-				printset.add(obj_1 + " " + "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>" + " " + obj_1_association + " .");
-				printset.add(obj_2 + " " + "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>" + " " + obj_2_association + " .");
-				
-				if(obj_1_association.equals(obj_2_association)) {
-					printset.add(association+" "+outputassociationType+" "+obj_1+" .");
-					printset.add(association+" "+outputassociationType+" "+obj_2+" .");
-					printset.add(associationType + " " + outputassociationType + " " + obj_1_association + " .");
-				}else {
-					printset.add(obj_1+" "+outputassociationType+" "+obj_2+" .");
-					printset.add(obj_1_association + " " + outputassociationType + " " + obj_2_association + " .");
+					
 				}
 				
-				
-				
 			}
-			
 		}
+	
 	}
 
 }

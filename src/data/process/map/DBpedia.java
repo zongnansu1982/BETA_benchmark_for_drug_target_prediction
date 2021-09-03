@@ -135,48 +135,51 @@ public class DBpedia {
 	
 	public static HashMap<String,HashSet<String>> getDBpediaMapping(HashMap<String,HashSet<String>> map1) throws IOException{
 		
-		
+		HashMap<String,HashSet<String>> map2=new HashMap<>();
 		StringBuffer sb=new StringBuffer();
 		for(String dbpedia:map1.keySet()){
 			sb.append(dbpedia+",");
 		}
 		
-		String queryStr = "PREFIX dbo: <http://dbpedia.org/ontology/> "
-				+ "select * where "
-				+ "{?subject dbo:omim ?object . "
-				+ "FILTER (?subject IN ("
-				+ sb.toString().substring(0,sb.toString().length()-1)
-				+ "))"
-				+ "}";
+		/**
+		 *  bug fixed 09/02/2021
+		 */
+		if (sb.toString().length()>0) {
+			String queryStr = "PREFIX dbo: <http://dbpedia.org/ontology/> "
+					+ "select * where "
+					+ "{?subject dbo:omim ?object . "
+					+ "FILTER (?subject IN ("
+					+ sb.toString().substring(0,sb.toString().length()-1)
+					+ "))"
+					+ "}";
+			
+	        Query query = QueryFactory.create(queryStr);
+	        
+	        // Remote execution.
+	        try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
+	            // Set the DBpedia specific timeout.
+	            ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
+
+	            // Execute.
+	            ResultSet rs = qexec.execSelect();
+	            while(rs.hasNext()){
+	            	QuerySolution qs=rs.next();
+	            	String key="<"+qs.get("subject")+">";
+	            	String value=qs.get("object").toString().substring(0, qs.get("object").toString().indexOf("^"));
+	            	value="<http://bio2rdf.org/omim:"+value+">";
+	            	if(map2.containsKey(key)){
+	            		map2.get(key).add(value);
+					}else{
+						HashSet<String> set=new HashSet<>();
+						set.add(value);
+						map2.put(key, set);
+					}
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+		}
 		
-        Query query = QueryFactory.create(queryStr);
-
-        
-        HashMap<String,HashSet<String>> map2=new HashMap<>();
-        
-        // Remote execution.
-        try ( QueryExecution qexec = QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query) ) {
-            // Set the DBpedia specific timeout.
-            ((QueryEngineHTTP)qexec).addParam("timeout", "10000") ;
-
-            // Execute.
-            ResultSet rs = qexec.execSelect();
-            while(rs.hasNext()){
-            	QuerySolution qs=rs.next();
-            	String key="<"+qs.get("subject")+">";
-            	String value=qs.get("object").toString().substring(0, qs.get("object").toString().indexOf("^"));
-            	value="<http://bio2rdf.org/omim:"+value+">";
-            	if(map2.containsKey(key)){
-            		map2.get(key).add(value);
-				}else{
-					HashSet<String> set=new HashSet<>();
-					set.add(value);
-					map2.put(key, set);
-				}
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         return map2;
 	}
 
