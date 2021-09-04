@@ -42,6 +42,13 @@ We follow the copy-right policy regulated by the license in each database, and w
    - [bio2rdf](https://bio2rdf.org/)
    - [DiseaseNetwork](http://networkrepository.com/bio-diseasome.php)
    
+- Download:
+   - RDF forms of DrugBank, GOA, Irefindex, KEGG, Linkedspl, OMIM, Pharmgkb, Pharmgkb-offside, Sider from bio2rdf (https://bio2rdf.org/)
+   - RDF form ofDisease network from diseasome (http://networkrepository.com/bio-diseasome.php)
+   - latest drug-target from DrugBank (https://go.drugbank.com/)
+   - put RDF files replace the sample files in data_sample/input/done
+   - put latest drug-target from DrugBank (xml) to data_sample/output/datasets/orinigal
+   
 - Sample data: ** @ Warning: The sample datasets are used for demonstration of the data format, you need downloading full datasets to run. Running sample dataset will result in failure of the program**
    - data_sample/input/done ## **Those are the datasets with a reduced size, please go the data sources to download the file with the corresponding names**
    - data_sample/output/\*.nq ## ** Those are the example networks used in the benchmark, including associations and mappings **
