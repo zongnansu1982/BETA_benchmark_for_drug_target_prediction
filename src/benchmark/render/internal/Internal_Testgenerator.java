@@ -187,7 +187,7 @@ public class Internal_Testgenerator {
 		HashMap<String, HashSet<String>> objectToTripleHashMap = getTripleFromObject();
 
 		BufferedReader br = new BufferedReader(
-				new FileReader(new File(dataDir+"/input/PTHR15.0_human")));
+				new FileReader(new File(dataDir+"/output/datasets/orignial/PTHR15.0_human")));
 		String lineString = null;
 
 		HashMap<String, HashSet<String>> pantherMolecular_uniprot = new HashMap<>();
